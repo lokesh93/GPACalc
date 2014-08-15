@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Website</title>
+		<link href="style.css" rel="stylesheet" type="text/css"
+	</head>
+	<body>
+		<div class="container_16">
+			<header class="grid_16">
+				<div class="grid_5 alpha brand">GPACalc</div>
+				<nav class="grid_11 omega">
+					<ul>
+						<li><a href="#">Home |</a></li> 
+						<li><a href="#"> GPA Calculator |</a></li>
+						<li><a href="#"> Average Calculator</a></li>
+					</ul>
+
+				</nav>
+			</header>
+			<div class=" grid_16 modtitle">
+				<a>Average Calculator</a>
+			</div>
+			<div>
+				<div id="dyinput">
+					<form action="input" class="modinput">
+						Course 1: <input type="number" name="percent" class="percent" min="0" max="100" >
+					</form>
+				</div>
+				<div class="grid_16 prefix_6 button_layout">
+					<a href="#" onclick="addinput('dyinput')" class="add-btn">+</a>
+				</div>
+				<div class="grid_16 prefix_5 button_layout">
+					<a href="#" onclick="avgcalc()" class="avg-btn">Calculate</a>
+				</div>
+				<div class="modtitle">
+					 <p id="gpa" class="modtitle"> </p>
+				</div>
+				<script type="text/javascript">
+				var counter = 2
+				function addinput(divname){
+					var newdiv = document.createElement('div');
+					newdiv.innerHTML =  "<form action='input' class='modinput'>" + "Course" + counter + ":" +" <input type='number' name='percent' class='percent' min='0' max='100'>";
+					document.getElementById(divname).appendChild(newdiv);
+					++counter;
+				}
+				
+				function avgcalc(){
+					var y = 0;
+					var elem = document.getElementsByClassName("percent");
+					for (var i = 0; i < elem.length; ++i) {
+						var a = parseInt(elem[i].value);
+						y=y+a;
+					}
+					var avg = y/elem.length;
+					document.getElementById("gpa").innerHTML = avg;
+				}
+				</script>
+			</div>
+			
+				
+		</div>
+		
+	</body>
+</html>

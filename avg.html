@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Website</title>
+		<link href="style.css" rel="stylesheet" type="text/css"
+	</head>
+	<body>
+		<div class="container_16">
+			<header class="grid_16">
+				<div class="grid_5 alpha brand">GPACalc</div>
+				<nav class="grid_11 omega">
+					<ul>
+						<li><a href="#">Home |</a></li> 
+						<li><a href="#"> GPA Calculator |</a></li>
+						<li><a href="#"> Average Calculator</a></li>
+					</ul>
+
+				</nav>
+			</header>
+			<div class=" grid_16 modtitle">
+				<a>GPA Converter</a>
+			</div>
+			<div>
+				<form action="input" class="modinput">
+					Enter your mark in percent: <input type="number" name="percent" id="percent" min="0" max="100" >
+				</form>
+				<div class="grid_16 prefix_5 button_layout">
+					<a href="#" onclick="gpaconvert()" class="gpacalc-btn">Convert</a>
+				</div>
+				<div class="modtitle">
+					 <p id="gpa" class="modtitle"> </p>
+				</div>
+				<script type="text/javascript">
+				function gpaconvert(){
+					var y = document.getElementById("percent").value;
+					var x = y/20-1;
+					x = x.toFixed(2);
+					document.getElementById("gpa").innerHTML ="GPA: " + x;
+				}
+				</script>
+			</div>
+			
+				
+		</div>
+		
+	</body>
+</html>
